@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vowels and Consonants</title>
+    <script>
+        function printVowelsAndConsonants() {
+            var str = document.getElementById("inputString").value;
+            var vowels = "aeiouAEIOU";
+            var vowelOutput = "";
+            var consonantOutput = "";
+
+            // Loop through each character in the string
+            for (var i = 0; i < str.length; i++) {
+                var ch = str[i];
+                if (vowels.includes(ch)) {
+                    vowelOutput += ch + "<br>";
+                } else if (ch.match(/[a-zA-Z]/)) {
+                    consonantOutput += ch + "<br>";
+                }
+            }
+
+            // Display results
+            document.getElementById("result").innerHTML =
+                "<b>Vowels:</b><br>" + vowelOutput +
+                "<b>Consonants:</b><br>" + consonantOutput;
+        }
+    </script>
+</head>
+<body>
+    <h1>Print Vowels and Consonants</h1>
+
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString">
+    <button onclick="printVowelsAndConsonants()">Show</button>
+
+    <p id="result"></p>
+</body>
+</html>
